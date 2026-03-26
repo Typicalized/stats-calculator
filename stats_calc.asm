@@ -34,13 +34,13 @@ main:
 	slt $t7, $t1, $t0	#$t7 stores result of $t1 < $t0
 	beq $t7, $zero, SKIP1	#if $t7 is zero ($t1 is greater than $t0), branch to SKIP1
 	add $t6, $t1, $zero	#$t7 is one ($t1 is less than $t0), so $t6 stores the smaller number $t1
-SKIP1:	slt $t7, $t2, $t1	#$t7 stores result of $t2 < $t1
+SKIP1:	slt $t7, $t2, $t6	#$t7 stores result of $t2 < $t6
 	beq $t7, $zero, SKIP2
 	add $t6, $t2, $zero	#$t6 stores $t2 if true
-SKIP2:	slt $t7, $t3, $t2	#$t3 < $t2
+SKIP2:	slt $t7, $t3, $t6	#$t3 < $t6
 	beq $t7, $zero, SKIP3
 	add $t6, $t3, $zero	#$t6 stores $t3 if true
-SKIP3:	slt $t7, $t4, $t3	#$t4 < $t3
+SKIP3:	slt $t7, $t4, $t6	#$t4 < $t6
 	beq $t7, $zero, SKIP4
 	add $t6, $t4, $zero	#$t6 stores $t4 if true
 SKIP4:	sw $t6, min
@@ -73,5 +73,4 @@ SKIP4:	sw $t6, min
 	lw	$t0, avg
 	print_integer($t0)
 
-	exit				# Exit program 
-
+	exit				# Exit program
