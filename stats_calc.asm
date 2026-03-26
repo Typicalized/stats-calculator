@@ -55,5 +55,5 @@ main:
 	lw	$t0, avg
 	print_integer($t0)
 
-	exit			# Exit program 
+	exit				# Exit program 
 
