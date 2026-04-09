@@ -18,7 +18,7 @@
 	.macro read_integer(%reg)		# Usage: read_integer(<register to store integer>)
 		li $v0, 5			# Load $v0 with 5; to read integer
 		syscall				# Syscall to read integer
-		addu %reg, $v0, $zero		# Moves integer to desired register 
+		add %reg, $v0, $zero		# Moves integer to desired register 
 	.end_macro 				# End of macro 
 
 	# Macro: terminates program
